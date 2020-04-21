@@ -7,18 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-	@GetMapping("/path/**")
-	public ResponseEntity<String> getA() {
-		return ResponseEntity.ok("response from type a");
+	@GetMapping("/foo/**")
+	public ResponseEntity<String> getFoo() {
+		return ResponseEntity.ok("response from foo/**");
 	}
 
-	@GetMapping("/path/**/:typeB")
-	public ResponseEntity<String> getB() {
-		return ResponseEntity.ok("response from type b");
+	@GetMapping("/foo/**/bar")
+	public ResponseEntity<String> getFooBar() {
+		return ResponseEntity.ok("response from foo/**/bar");
 	}
 
-	@GetMapping("/path/**/:typeC")
-	public ResponseEntity<String> getC() {
-		return ResponseEntity.ok("response from type c");
-	}
 }
